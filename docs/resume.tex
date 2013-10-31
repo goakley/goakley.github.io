@@ -1,0 +1,79 @@
+\documentclass[letterpaper,11pt]{article}
+
+
+\usepackage{hyperref}
+\usepackage[pagesetup]{tucv}
+
+
+\begin{document}
+
+% page heading and name/contact info
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Glen Oakley}  & 347.725.0992\\
+Perm: 33 Gaisler Road, Blairstown, NJ 07825 &  goakley@glenoakley.com \\
+Mail: 189 Green Lane, Ewing, NJ 08638 & http://www.glenoakley.com/ \\
+\end{tabular*}
+
+\resheading{Education}
+\begin{itemize}
+\item[]
+    \resschool{The College of New Jersey}{Ewing, NJ}
+        \resdegree{Bachelor}{Computer Science - 4th Year Status}{2010 - 2014}
+        \ressubentry{GPA of 3.67 on a 4.00 scale}{}
+\end{itemize}
+
+\resheading{Experience}
+\begin{itemize}
+\item[]
+    \resemployer[Cloud-based code IDE with a focus on simplicity and collaboration]{\href{https://github.com/goakley/cumulonimbus-ide}{Cumulonimbus IDE}}{Spr 2013}
+        \ressubentry{Leveraged web sockets for real-time communication}{}
+        \ressubentry{App build around Amazon Web Services for data/resource management}{}
+%    \resemployer[Filesystem tracker providing detailed logging of CRUD operations on files]{File Stalker}{Spr 2012}
+%        \ressubentry{Focus on documentation and the software development lifecycle}{}
+%        \ressubentry{Co-managed team of 6 programmers}{}
+%\item[]
+%    \resemployer[A simple tool to map relationships between users based on shares]{Google+ Relationship Mapping}{Fall 2011}
+%        \ressubentry{Parsed JSON data from the Google+ API to map the relationships between users, based on the sharing of posts between users.}{}
+\item[]
+    \resemployer[Student sysadmin on school computer cluster]{SoS Computation Cluster}{Current}
+        \ressubentry{Prepared and maintained servers for different uses, including OpenStack hosting and graphics rendering software.}{}
+\item[]
+    \resemployer[Global Game Jam 48-hour project]{\href{http://glenoakley.com/pspin/}{``Project Spin''}}{2012}
+        \ressubentry{Solo engineer on a team with a 2D artist and musician.  Implemented a playable game prototype from scratch, including an audio engine.}{}
+\item[]
+\resemployer[A set of tools for working with the HACK computer architecture]{HACKskell}{Current}
+\end{itemize}
+
+\resheading{Selected Skills and Abilities}
+\begin{itemize}
+    \item[] \resdesc{Programming}{C, Python, JavaScript, Haskell, Bash, MongoDB, Java, Verilog}
+    \item[] \resdesc{Platforms/Tools}{Linux (Arch, Ubuntu), Make, Git, Emacs, JSON, \LaTeX, SVN, JSSML}
+\end{itemize}
+
+\resheading{Employment History}
+\begin{itemize}
+\item[]
+% Top-level entry for an employer, providing employer, location, and description
+% fields:
+\resemployer{\href{https://www.nebula.com/}{Nebula Inc}}{2013}
+    \resjob[Work focused on distributed system architecture.  Developed an orchestration management tool for the Nebula system.  Improved testing ergonomics by building smarter tools.]{Technical Intern 2013}{}{}
+\resemployer{\href{http://corp.bankofamerica.com/}{Bank of America Merrill Lynch}}{2012}
+%[Global Wealth and Technologies]
+%    \resjob[Designed and implemented internal iPad applications, including a cloud-based file management system.  Use of FLOSS and web services.]{Intern 2012 - iPad Developer}{}{}
+    \resjob[Designed and implemented an internal cloud-based file manager.]{Intern 2012 - iPad Developer}{}{}
+%\resemployer[YMCA Children's Summer Camp and Outdoor Center]{YMCA Camp Mason}{Hardwick, NJ}
+    %\resjob[Charged with overseeing groups of eight 11-13 year old boys along with another counselor.  Duties included planning activities and coordinating with the other counselors and staff for larger events.]{Cabin Counselor}{June}{Aug 2011}
+\end{itemize}
+
+\resheading{Affiliations}
+\begin{itemize}
+\item[]
+    \resemployer{Kleiner Perkins Caufield Byers Fellow}{2013}
+\item[]
+    \resemployer{Association for Computing Machinery}{}
+        \ressubentry{Campus Chapter Secretary / SysAdmin}{2010 - 2014}
+\item[]
+    \resemployer{Free Software Foundation\\Linux Foundation}{}
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,44 @@
+---
+layout: site
+title: Glen Oakley
+---
+
+<div class="container">
+  <div><b>================================= :Glen Oakley =================================</b></div>
+  <!--<div>mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</div>-->
+  <div class="input line">&gt; id <b>glen-oakley</b> | fmt --prettify</div>
+  <div class="output line">uid=1000(glen-oakley)</div>
+  <div class="output line">gid=100(computer-science)</div>
+  <div class="output line">groups=12(<a href="mailto:goakley123@gmail.com">mail</a>)</div>
+  <div class="output line">       95(<a href="https://github.com/goakley/">github</a>),</div>
+  <div class="output line">       90(<a href="https://twitter.com/goakley123">twitter</a>),</div>
+  <div class="output line">       85(<a href="http://linkedin.com/in/glenoakley" rel="me">linkedin</a>),</div>
+  <div class="output line">       80(<a href="http://plus.google.com/104815258973759324455" rel="me">google_</a>),</div>
+  <div class="output line">       75(<a href="https://alpha.app.net/goakley" rel="me">appnet</a>),</div>
+  <div class="output line">       70(<a href="https://aur.archlinux.org/packages/?SeB=m&K=goakley">aur</a>),</div>
+  <div class="output line">       65(<a href="skype:glen.oakley.m?chat">skype</a>)</div>
+  <!--<div class="output line">       60(<a href="https://www.certmetrics.com/comptia/public/verification.aspx#vc=GGEN72W1WDBQY833">a-plus</a>)</div>-->
+  <!-- projects -->
+  <div id="projects" class="input line">&gt; ls -1v <b>projects</b></div>
+  <div class="output line">projects -> <a href="https://github.com/goakley/">github</a></div>
+  <!-- docs -->
+  <div id="docs" class="input line">&gt; ls -1v <b>docs/</b> | xargs -L1 whatis </div>
+  <div class="output line"><a href="./docs/resume.pdf" target="_blank">resume.pdf</a>: nothing appropriate</div>
+  <div class="output line"><a href="./docs/glenoakley.vcf">vcard.vcf</a>: electronic business card</div>
+  <!--
+  <div class="output line"><a href="./docs/webapps.pdf" target="_blank">WebApps.pdf</a>    - Analysis of processing power required to drive web apps</div>
+  <div class="output line"><a href="./docs/boa.pdf" target="_blank">Intern_BoA.pdf</a> - Summary of time spent in iOS development at Bank of America</div>
+  -->
+  <!-- blog -->
+  <div id="blog" class="input line">&gt; ls -1 <b>blog/</b> | sort --date</div>
+  {% for post in site.posts %}
+  <div class="output line">{{ post.date | date_to_string }} - <a href="{{ post.url }}">{{ post.title }}</a></div>
+  {% endfor %}
+  <br/>
+  <div>&gt; &#9608;</div>
+  <br/>
+</div>
+<div id="scriptdiv" style="position:fixed;left:0;bottom:0;font-size:50%;"></div>
+<script>function func(){document.getElementById("scriptdiv").textContent=((Date.now()/1000)|0)-717379200;};func();setInterval(func, 512);</script>
+<img hidden=hidden src="https://images.encyclopediadramatica.se/e/e2/Wolfaboo_stamp_2.gif" />
+<!--<center><a href="http://kevintcoughlin.com/"><img src="/hhat.png" width=320 /></a></center> Haha, Kevin, what did you do-->

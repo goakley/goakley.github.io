@@ -1,0 +1,28 @@
+/* CSS belongs to Drew Inglis: http://www.drewinglis.com/ */
+/* Thanks be to him for tackling this beast of a description language */
+
+* { margin:0; padding:0; font-size:14px; font-weight:normal; font-family:Helvetica, Arial, sans-serif; }
+ul, ol { padding-left:25px; margin-top:5px; }
+
+#content { width:800px; margin:0 auto; }
+#content header .contact { float:right; margin-top:-3ex; }
+
+#content .section { margin:18px 0 0; }
+#content .section, #content .section .languages:last-child { margin-bottom:0; }
+
+#content .left { position:relative; }
+#content .right { margin:10px 0 0; }
+
+#content h1 { font-size:175%; font-weight:bold; }
+#content h2 { font-weight:bold; border-bottom:1px solid black; padding:5px; }
+#content h3 { font-weight:bold; }
+
+#content .job, #content .school, #content .project, #content .languages { margin:0 0 0.5ex; position:relative; padding:5px; }
+#content .job h3, #content .school h3 { width:800px; position:absolute; top:0; left:0; text-align:center; }
+#content .job .time, #content .school .time { position:absolute; top:0; right:0; }
+
+#content .project h3 { display:inline-block; }
+#content .project .time { display:inline-block; }
+#content .project .time::before { content:" — "; }
+#content .project .url::before { content:" — "; }
+#content .project .url { display:inline-block; }

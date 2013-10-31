@@ -1,0 +1,31 @@
+body {
+    background:#111;
+    color:#afa;
+    font-family:Courier, monospace;
+    font-size:100%;
+}
+a, a:link, a:visited, a:hover, a:active {
+    color:#dff;
+    text-decoration:none;
+}
+.container {
+    width:50em;
+    padding-left:1.0em;
+    padding-right:1.0em;
+    padding-bottom:1.0ex;
+    margin-left:auto;
+    margin-right:auto;
+    border-left:1px dashed #afa;
+    border-right:1px dashed #afa;
+}
+.line {
+    white-space:pre;
+    padding-top:0.1ex;
+    padding-bottom:0.1ex;
+}
+.input {
+    padding-top:2.5ex;
+}
+.output {
+    margin-left:0.1ex;
+}

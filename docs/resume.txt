@@ -1,0 +1,66 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[pagesetup]{tucv}
+
+
+\begin{document}
+
+% page heading and name/contact info
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Glen Oakley}  & 347.725.0992\\
+Perm: 33 Gaisler Road, Blairstow, NJ 07825 &  goakley123@gmail.com \\
+School: 2000 Pennington Road, Eickhoff 220, Ewing, NJ 08628 & http://tcnj.edu/\~{}oakleyg1 \\
+\end{tabular*}
+
+\resheading{Education}
+\begin{itemize}
+\item[]
+    \resschool{The College of New Jersey}{Ewing, NJ}
+        \resdegree[Currently enrolled; sophomore status]{Bachelor}{Computer Science}{2010 - }
+        \ressubentry{GPA of 3.6 on a 4.0 scale}{}
+\end{itemize}
+
+\resheading{Experience}
+\begin{itemize}
+\item[]
+    \resemployer{Google+ Relationship Mapping}{Fall 2011}
+        \ressubentry{Parsed JSON data from the Google+ API to map the relationships between users, based on the sharing of posts between users.}{}
+\item[]
+    \resemployer{Team Software Design Competition}{Spr 2011}
+        \ressubentry{Led a team of five other people to produce a deliverable program fitting predetermined requirements, given a 48 hour time span.}{}
+\item[]
+    \resemployer{Procedural Terrain Generation}{Fall 2011}
+        \ressubentry{Implementation of the Diamond-Square algorithm to create semi-realistic terrain heightmaps, currently working to refine the process to create more realistic results.}{}
+\end{itemize}
+
+\resheading{Selected Skills and Abilities}
+\begin{itemize}
+    \item[] \resdesc{Programming Languages}{Java, C, C++, OpenGL, SQL}
+    \item[] \resdesc {Markup Languages}{\LaTeX , HTML, JSON, XML}
+    \item[] \resdesc{Operating Systems}{Windows 7, Ubuntu (10.10+)}
+    \item[] \resdesc{Development Tools}{Bash, GNU Emacs, Apache Ant, Eclipse IDE, GNU Make, Subversion}
+\end{itemize}
+
+\resheading{Employment History}
+\begin{itemize}
+\item[]
+% Top-level entry for an employer, providing employer, location, and description
+% fields:
+\resemployer[YMCA Children's Summer Camp and Outdoor Center]{YMCA Camp Mason}{Hardwick, NJ}
+    \resjob[Charged with overseeing groups of eight 11-13 year old boys along with another counselor.  Duties included planning activities and coordinating with the other counselors and staff for larger events.]{Cabin Counselor}{June}{Aug 2011}
+\end{itemize}
+
+\resheading{Affiliations}
+\begin{itemize}
+\item[]
+    \resemployer{Association for Computing Machinery}{}
+        \ressubentry{Registered member of the ACM}{}
+        \ressubentry{Secretary of campus chapter}{}
+        \ressubentry{System administrator for campus ACM server}{}
+\item[]
+	\resemployer{Cloud Computing Research Group}{}
+		\ressubentry{Exploration into Amazon Web Services and related services}{}
+\item[]
+    \resemployer{Magic Circle - Campus Game Design Club}{}
+\end{itemize}
+
+\end{document}

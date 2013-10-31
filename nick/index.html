@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head><title>HAPPY BIRTHDAY NICK</title></head>
+  <body id="body" style="background-color:black;">
+    <img style="float:left;" src="fishr.png" height=600/>
+    <img style="float:right;" src="fish.png" height=600/>
+    <center style="text-align:center;">
+      <img id="head" src="head.png" width=200/>
+      <h1 id="nick" style="font-size:600%">NICK</h3>
+      <h2 style="font-size:300%;">~ HAPPY ~<br/>BIRTHDAY</h1>
+    </center>
+    <audio src="daftpunkram.ogg" autoplay loop >
+  </body>
+  <script>
+    setInterval(function() {
+    document.getElementById('body').style.backgroundColor = "rgb(" + 
+    Math.floor(Math.random()*256) + "," + 
+    Math.floor(Math.random()*256) + "," + 
+    Math.floor(Math.random()*256) + ")";
+    var head = document.getElementById('head');
+    if (head.style.marginLeft == "") {
+    head.style.marginRight = "";
+    head.style.marginLeft = "10px";
+    } else {
+    head.style.marginLeft = "";
+    head.style.marginRight = "10px";
+    }
+    }, 525);
+    setInterval(function() {
+    document.getElementById('nick').style.color = "rgb(" + 
+    Math.floor(Math.random()*256) + "," + 
+    Math.floor(Math.random()*256) + "," + 
+    Math.floor(Math.random()*256) + ")";
+    }, 256);
+  </script>
+</html>
