@@ -7,6 +7,7 @@ date:   2013-11-22
 Games are excellent at taking an unfairly complicated task and making it look so very simple and smooth.
 
 ![Screenshot](/imgs/game_scene.jpg)
+
 <small>Not pictured: thousands of pointers and hundreds of skipped meals</small>
 
 Let's talk about movement.  Movement is one of those things that you have to accept is harder than just pressing a key and having the game jump you forward in a smooth fashion.  People seem to have perfected twisting their bodies into exotic shapes, and here I am with the choice between sleeping and seeing if I can make my character tilt her head (spoiler alert: my bed is warm and comfortable).  But I digress.  Right now, let's focus on moving something at all, in at least a slightly realistic manner.  This method was developed in OpenGL using C for first-person views, but there is no OpenGL code in this explanation and it's not locked to first-person gaming.
