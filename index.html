@@ -32,7 +32,7 @@ title: Glen Oakley
   <!-- blog -->
   <div id="blog" class="input line">&gt; ls -1 <b>blog/</b> | sort --date</div>
   {% for post in site.posts %}
-  <div class="output line">{{ post.date | date_to_string }} - <a href="{{ post.url }}">{{ post.title }}</a></div>
+  <div class="output line">{{ post.date | date: "%Y-%m-%d" }} - <a href="{{ post.url }}">{{ post.title }}</a></div>
   {% endfor %}
   <br/>
   <div>&gt; &#9608;</div>
