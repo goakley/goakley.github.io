@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "An Algorithm For Triangular Decay"
-date:   2013-11-27
+date:   2013-11-25
 ---
 
 When dealing with 3D objects, models are represented using some primitive shapes and constructs.  An issue that arises with these primitives is that they have questionable behaviour when they cover a large amount of space.  The problem is easy to visualize using a bunch of blocks / squares.  In the image below, each square surface is not subdivided, and thus is rendered as two triangles (the 'primitive' type of OpenGL).  The light below is a spotlight from the camera straight ahead.  If you look closely, you can make out the shapes of the triangles that form the squares, and the lighting in general is rather thinly spread and doesn't really carry a spotlight effect.  The issue is that OpenGL is calculating the lighting and interpolating across the primitives' entire surface, creating a dulled effect.
@@ -12,7 +12,7 @@ When dealing with 3D objects, models are represented using some primitive shapes
 
 A simple solution is to break down large-scale primitives into multiple smaller primitives.  If we take the primitive surface and start drawing lines from one edge to another (surfaces lie in a 2D plane), we will be dividing the surface in such a manner.  However haphazardly dissecting a surface is not an idea way to approach the problem, and so we will here explore a very effective method of sub-dividing surfaces.
 
-We'll define a surface as being some triangle in 3 dimensions with a pre-computed normal vector (don't worry, we won't be using the normal in these calculations).  We chose three points because three is the maximum number of points that are absolutely required to lie on some plane (that is, three points have to lie in the same plane with each other), which coincides with our definition of a surface (a 2D shape).  Two points form a line as opposed to a surface, and four points may lie outside a single plane, greatly complicating these calculations.  Furthermore, any surface greater than three points can be easily broken down into multiple surfaces consiting of three points (By creating surfaces with vertices {v0,v1,v2}, {v1,v2,v3}, ..., {v(n-2),v(n-2),v(n)}).  For ease of comprehension, we'll use 'surface' and 'triangle' interchangably; just remember that the triangle lies anywhere 3D space.
+We'll define a surface as being some triangle in 3 dimensions with a pre-computed normal vector (don't worry, we won't be using the normal in these calculations).  We chose three points because three is the maximum number of points that are absolutely required to lie on some plane (that is, three points have to lie in the same plane with each other), which coincides with our definition of a surface (a 2D shape).  Two points form a line as opposed to a surface, and four points may lie outside a single plane, greatly complicating these calculations.  Furthermore, any surface greater than three points can be easily broken down into multiple surfaces consisting of three points (By creating surfaces with vertexes {v0,v1,v2}, {v1,v2,v3}, ..., {v(n-2),v(n-2),v(n)}).  For ease of comprehension, we'll use 'surface' and 'triangle' interchangeably; just remember that the triangle lies anywhere 3D space.
 
 ```c
 typedef struct {
@@ -21,7 +21,7 @@ typedef struct {
 } surface_t;
 ```
 
-The division itself can easily be defined recursively.  If we have an altorithm to divide a triangle into two sub-triangles, we can easily apply the exact same algorithm to the sub-triangles, and then their sub-triangles, _ad infinitum_.  This is an exponential equation; if we divide a triangle `n` times, we will end up with `2^n` triangles.  Our function will report this number as its return value, and it will store all of the sub-triangles in a contiguous chunk of memory.
+The division itself can easily be defined recursively.  If we have an algorithm to divide a triangle into two sub-triangles, we can easily apply the exact same algorithm to the sub-triangles, and then their sub-triangles, _ad infinitum_.  This is an exponential equation; if we divide a triangle `n` times, we will end up with `2^n` triangles.  Our function will report this number as its return value, and it will store all of the sub-triangles in a contiguous chunk of memory.
 
 ```c
 size_t surface_divide(surface_t surface,
@@ -46,13 +46,17 @@ Other than that, the algorithmic base case is if we are not going to subdivide a
   }
 ```
 
-Now that we have everything else out of the way, let's focus on how we should best subdivide the triangles.  What is a triangle again?  A triangle consists of three points with three lines connecting theses points.  The sum of the three angles created by the intersection of the sides is half tau (or 180 degrees).  Triangles can be qualified with descriptors depending on the properties of the angles and sides, including equliateral (all sides of the same length) and right angled (one quarter tau angle).
+Now that we have everything else out of the way, let's focus on how we should best subdivide the triangles.  What is a triangle again?  A triangle consists of three points with three lines connecting theses points.  The sum of the three angles created by the intersection of the sides is half tau (or 180 degrees).  Triangles can be qualified with descriptors depending on the properties of the angles and sides, including equilateral (all sides of the same length) and right angled (one quarter tau angle).
 
 The goal of our algorithm is to take some triangle and split it into two triangles that are a small as possible, but what is 'small' here?  Our goal is to create smaller triangles out of a larger triangle, and the most balanced way to do that is to split the triangle in a way that creates two triangles of equal area.  To do that, we can draw a line from one vertex to the midpoint of the opposite side (proof [here](http://jwilson.coe.uga.edu/EMT668/EMAT6680.2000/Lehman/emat6690/bisecttri's/medians.html)).
 
-But wait, we have three vertices!  Which should we pick?  Well, we are trying to minimize the overall size of the final triangles, so let's also look at perimeter.  If we want the smallest total perimeter for the two sub-triangles, we'll need to draw the smallest possible vertex-side line.  Conveniently, we can identify that as the line from the **largest-angled vertex to the longest side** (404 proof not found, but draw some triangles and try it yourself).
+But wait, we have three vertexes!  Which should we pick?  Well, we are trying to minimize the overall size of the final triangles, so let's also look at perimeter.  If we want the smallest total perimeter for the two sub-triangles, we'll need to draw the smallest possible vertex-side line.  Conveniently, we can identify that as the line from the **largest-angled vertex to the longest side** (404 proof not found, but draw some triangles and try it yourself).
 
-Let's start by identifying the longest side, and marking the two vertices that form the side (`a` and `b`) and the vertex `x` that will be bisected:
+![Triangles](/imgs/triangles.png)
+
+<small>I make good art with straight lines and carefully measured angles</small>
+
+Let's start by identifying the longest side, and marking the two vertexes that form the side (`a` and `b`) and the vertex `x` that will be bisected:
 
 ```c
   float d12 = vec3f_distance(surface.points[0], surface.points[1]);
@@ -76,7 +80,7 @@ Let's start by identifying the longest side, and marking the two vertices that f
   }
 ```
 
-**ORDER MATTERS**.  In 3D graphics, each face/surface has a front and a back side.  The side that is showing is determined by which order the vertices occur, either 'clockwise' or 'counterclockwise'.  When we specify a and b as we did above, we retain whatever order the current surface is (CW or CCW) when we use it in the final part of the algorithm.
+**ORDER MATTERS**.  In 3D graphics, each face/surface has a front and a back side.  The side that is showing is determined by which order the vertexes occur, either 'clockwise' or 'counterclockwise'.  When we specify a and b as we did above, we retain whatever order the current surface is (CW or CCW) when we use it in the final part of the algorithm.
 
 All that's left is finding the actual midpoint of the side and recursing.  When we recurse, we'll use the first half of the output array on one of the sub-triangles and the other half on the other one.  And since the surface lies in a plane, we don't need to re-calculate any normals!
 
