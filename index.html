@@ -39,6 +39,15 @@ title: Glen Oakley
   <br/>
 </div>
 <div id="scriptdiv" style="position:fixed;left:0;bottom:0;font-size:50%;"></div>
-<script>function func(){document.getElementById("scriptdiv").textContent=((Date.now()/1000)|0)-717379200;};func();setInterval(func, 512);</script>
+<script>
+    var output = -1;
+    function func() {
+        var message = atob("VHJ5IHRvIGltYWdpbmUgYSBsaWZlIHdpdGhvdXQgdGltZWtlZXBpbmcuIFlvdSBwcm9iYWJseSBjYW4ndC4gWW91IGtub3cgdGhlIG1vbnRoLCB0aGUgeWVhciwgdGhlIGRheSBvZiB0aGUgd2Vlay4gVGhlcmUgaXMgYSBjbG9jayBvbiB5b3VyIHdhbGwgb3IgdGhlIGRhc2hib2FyZCBvZiB5b3VyIGNhci4gWW91IGhhdmUgYSBzY2hlZHVsZSwgYSBjYWxlbmRhciwgYSB0aW1lIGZvciBkaW5uZXIgb3IgYSBtb3ZpZS4gWWV0IGFsbCBhcm91bmQgeW91LCB0aW1la2VlcGluZyBpcyBpZ25vcmVkLiBCaXJkcyBhcmUgbm90IGxhdGUuIEEgZG9nIGRvZXMgbm90IGNoZWNrIGl0cyB3YXRjaC4gRGVlciBkbyBub3QgZnJldCBvdmVyIHBhc3NpbmcgYmlydGhkYXlzLiBNYW4gYWxvbmUgbWVhc3VyZXMgdGltZS4gTWFuIGFsb25lIGNoaW1lcyB0aGUgaG91ci4gQW5kLCBiZWNhdXNlIG9mIHRoaXMsIG1hbiBhbG9uZSBzdWZmZXJzIGEgcGFyYWx5emluZyBmZWFyIHRoYXQgbm8gb3RoZXIgY3JlYXR1cmUgZW5kdXJlcy4gQSBmZWFyIG9mIHRpbWUgcnVubmluZyBvdXQu");
+        var string = "" + (((Date.now()/1000)|0) - 717379200);
+        if (output >= 0) { string += " - " + message.substr(0,output); output+=(message.length>output?2:0); }
+        document.getElementById("scriptdiv").textContent = string;
+    }func();setInterval(func, 128);
+    document.getElementById("scriptdiv").addEventListener("mouseover", function() { if (output<0) output=0; });
+</script>
 <img hidden=hidden src="https://images.encyclopediadramatica.se/e/e2/Wolfaboo_stamp_2.gif" />
 <!--<center><a href="http://kevintcoughlin.com/"><img src="/hhat.png" width=320 /></a></center> Haha, Kevin, what did you do-->
