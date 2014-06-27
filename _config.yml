@@ -1,5 +1,5 @@
 name: Glen Oakley
 markdown: redcarpet
-pygments: true
+highlighter: true
 timezone: UTC
 future: false
