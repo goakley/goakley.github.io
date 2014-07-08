@@ -60,4 +60,53 @@ main = interact $ unlines .
        tail . lines
 ```
 
+# [2014 - Round 1B - A. The Repeater](http://code.google.com/codejam/contest/2994486/dashboard#s=p0)
+
+## Input
+
+```
+5
+2
+mmaw
+maw
+2
+gcj
+cj
+3
+aaabbb
+ab
+aabb
+2
+abc
+abc
+3
+aabc
+abbc
+abcc
+```
+
+## Output
+
+```
+Case #1: 1
+Case #2: Fegla Won
+Case #3: 4
+Case #4: 0
+Case #5: 3
+```
+
+## Solution Signature & Main
+
+```
+solution :: [String] -> Maybe Int
+
+main = interact $ unlines .
+       zipWith (++) ["Case #" ++ show i ++ ": " | i <- [1..]] .
+       -- the solver will return Nothing if Fegla won
+       -- otherwise the result can just be displayed
+       map ((maybe "Fegla Won" show . solution) . tail) .
+       -- group together all strings for each test case
+       groupBy (\_ b -> head b `elem` ['a'..'z']) . tail . lines
+```
+
 Keep an eye on this post for potential updated test cases.
