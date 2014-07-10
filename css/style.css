@@ -4,6 +4,10 @@ body {
     font-family:Courier, monospace;
     font-size:100%;
 }
+.post pre, .post code {
+    border:none;
+    background:#111;
+}
 a, a:link, a:visited, a:hover, a:active {
     color:#dff;
     text-decoration:none;
@@ -39,4 +43,9 @@ a, a:link, a:visited, a:hover, a:active {
     -moz-transform:scale(4,2); /* Firefox */
     -ms-transform:scale(4,2); /* IE 9 */
     -o-transform:scale(4,2); /* Opera */
+}
+.post img {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }

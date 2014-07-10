@@ -67,7 +67,7 @@ $ ls -l /var/cache/pacman/pkg
 -rw-r--r-- 1 root root       0 Sep 26 13:28 vlc-2.1.0-2-x86_64.pkg.tar.xz
 ```
 
-I did't recall reading about any infinitely-compressible information algorithms, so I was fairly sure that these packages should not be empty.  If I had to guess, I'd say that the system stopped during an I/O operation, which lost information about the files for certain package archives.  The fix of course was a re-download and a force install of the packages, all from a bootable USB.
+I didn't recall reading about any infinitely-compressible information algorithms, so I was fairly sure that these packages should not be empty.  If I had to guess, I'd say that the system stopped during an I/O operation, which lost information about the files for certain package archives.  The fix of course was a re-download and a force install of the packages, all from a bootable USB.
 
 ```
 Generating locales...
