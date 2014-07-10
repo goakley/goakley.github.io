@@ -36,10 +36,20 @@ title: Glen Oakley
   <div class="output line">{{ post.date | date: "%Y-%m-%d" }} - <a href="{{ post.url }}">{{ post.title }}</a></div>
   {% endfor %}
   <br/>
-  <div>&gt; &#9608;</div>
+  <div>&gt; <span id="cursor">&#9608;</span></div>
   <br/>
 </div>
-<div id="scriptdiv" style="position:fixed;left:0;bottom:0;font-size:50%;"></div>
+<div id="scriptdiv" style="position:fixed;left:1ex;bottom:1ex;font-size:50%;"></div>
+<script>
+    var cursor = document.getElementById("cursor");
+    (function cursor_yes() {
+        cursor.innerHTML = "&#9608;";
+        window.setTimeout(function cursor_no() {
+            cursor.innerHTML = "&nbsp;";
+            window.setTimeout(cursor_yes, 1000);
+        }, 1000);
+    })();
+</script>
 <script>
     var output = -1;
     function func() {

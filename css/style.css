@@ -1,8 +1,22 @@
+html, body {
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
 body {
+    padding:1ex;
+    box-sizing:border-box;
     background:#111;
     color:#afa;
     font-family:Courier, monospace;
     font-size:100%;
+    -moz-box-shadow:inset 0 0 2ex #afa;
+    -webkit-box-shadow:inset 0 0 2ex #afa;
+    box-shadow:inset 0 0 2ex #afa;
 }
 a, a:link, a:visited, a:hover, a:active {
     color:#dff;
