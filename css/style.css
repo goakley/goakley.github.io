@@ -29,3 +29,14 @@ a, a:link, a:visited, a:hover, a:active {
 .output {
     margin-left:0.1ex;
 }
+#go {
+    line-height:100%;
+    float:right;
+    margin-right:16em;
+    margin-top:16ex;
+    transform:scale(4,2); /* W3C */
+    -webkit-transform:scale(4,2); /* Safari and Chrome */
+    -moz-transform:scale(4,2); /* Firefox */
+    -ms-transform:scale(4,2); /* IE 9 */
+    -o-transform:scale(4,2); /* Opera */
+}
