@@ -16,11 +16,24 @@
   <body>
     <div id="content">
       <header>
-        <h1>Glen Oakley</h1>
         <p class="contact">goakley123@gmail.com<br/>http://glenoakley.com/</p>
+        <h1>Glen Oakley</h1>
       </header>
       <div class="section">
         <h2>Experience</h2>
+        <div class="job">
+          <div class="left">
+            <h3>Thumbtack</h3>
+            <p class="title">Software Engineer</p>
+            <p class="time">June 2014 - Present</p>
+          </div>
+          <p class="description right">
+            <ul>
+              <li>Designed and implemented product changes designed to improve the core customer-professional matching system, including user-facing onboarding flow changes, re-evaluation of the incentives system, and criteria changes for the notification system</li>
+              <li>Worked with and on custom A/B testing system, ensuring product changes were measurably and significantly beneficial</li>
+            </ul>
+          </p>
+        </div>
         <div class="job">
           <div class="left">
             <h3>Nebula</h3>
@@ -31,7 +44,7 @@
             <ul>
               <li>Enhanced Python-based unit and functional test suite to allow for quicker testing and the production of succinct but informative test results and code coverage</li>
               <li>Implemented Collectd plugins to visualize physical and virtual machine usage through the Graphite realtime graphing system, allowing developers to easily identify when and where problems occur in the system</li>
-              <li>Redesigned disk image building system (taking it from Python to Make), removing redundant operations and enabling partial builds, drastically reducing the build time in a key part of the system</li>
+              <li>Redesigned disk image building system (porting it from Python to Make), removing redundant operations and enabling partial builds, drastically reducing the build time in a key part of the system</li>
             </ul>
           </p>
         </div>
@@ -43,9 +56,9 @@
           </div>
           <p class="description right">
             <ul>
-              <li>Designed and prototyped a secure file syncing application for iOS, utilizing an internal cloud storage platform</li>
-              <li>Began investigation into automated testing for the iOS team using Apple's built-in tools</li>
-              <li>Configured OSQA (an open source Q&amp;A platform), allowing the mobile teams to easily disseminate information, and modified the code base to integrate with BoA's authentication technology</li>
+              <li>Designed and prototyped a secure file syncing application for iOS utilizing an internal cloud storage platform</li>
+              <li>Began investigation into automated testing for the iOS team using Xcode's built-in tooling</li>
+              <li>Configured internal Q&amp;A platform for mobile development information dissemination with custom SSO integration</li>
             </ul>
           </p>
         </div>
@@ -55,13 +68,13 @@
         <div class="school">
           <div class="left">
             <h3>The College of New Jersey</h3>
-            <p class="time">August 2010 - Expected May 2014</p>
+            <p class="time">August 2010 - May 2014</p>
             <p class="location">Ewing, NJ</p>
           </div>
           <div class="right courses">
             <ul>
-              <li>BS in Computer Science with a 3.67/4.00</li>
-              <li>Courses include: Artificial Intelligence, Advanced Analysis of Algorithms, Microcontrollers, Cloud Computing, Computational Biology, Computer Graphics</li>
+              <li>BS in Computer Science with a 3.73/4.00 GPA</li>
+              <li>Courses include: Artificial Intelligence, Advanced Algorithms, Microcontrollers, Cloud Computing, Computer Graphics, HCI</li>
             </ul>
           </div>
         </div>
@@ -70,15 +83,14 @@
         <h2>Projects</h2>
         <div class="project">
           <div class="left">
-            <h3>Ray Tracer</h3>
-            <p class="time">Ongoing</p>
-            <p class="url">https://github.com/goakley/ray-tracer</p>
+            <h3>Hackskell</h3>
+            <p class="time">Winter 2014</p>
+            <p class="url">https://github.com/goakley/Hackskell</p>
           </div>
           <div class="description">
             <ul>
-              <li>Uses real-world lighting and wave physics concepts to realistically render 3D scenes</li>
-              <li>Use of 3D transformation with vector/matrix manipulation allows for compex camera views</li>
-              <li>Basic scripting language provides a method for creating detailed scenes independent of the engine</li>
+              <li>A set of (Haskell) tools for targeting Hack, a Harvard architecture machine</li>
+              <li>Uses a basic LL parser for building internal representations of the applicable languages</li>
             </ul>
           </div>
         </div>
@@ -98,26 +110,15 @@
         </div>
         <div class="project">
           <div class="left">
-            <h3>Hackskell - Ongoing</h3>
-            <p class="url">https://github.com/goakley/Hackskell</p>
+            <h3>Ray Tracer</h3>
+            <p class="time">Fall 2013</p>
+            <p class="url">https://github.com/goakley/ray-tracer</p>
           </div>
           <div class="description">
             <ul>
-              <li>A set of (Haskell) tools for targeting Hack, a Harvard architecture machine</li>
-              <li>Uses a basic LL parser for building internal representations of the applicable languages</li>
-            </ul>
-          </div>
-        </div>
-        <div class="project">
-          <div class="left">
-            <h3>Cumulonimbus IDE</h3>
-            <p class="time">February 2013 - April 2013</p>
-            <p class="url">https://github.com/goakley/cumulonimbus-ide</p>
-          </div>
-          <div class="description">
-            <ul>
-              <li>Yet another collaborative online text/code editor</li>
-              <li>Powered by Amazon Web Services for data and document storage, queue-based messaging, and load balancing</li>
+              <li>Uses real-world lighting and wave physics concepts to realistically render 3D scenes</li>
+              <li>Use of 3D transformation with vector/matrix manipulation allows for complex camera views</li>
+              <li>Basic scripting language provides a method for creating detailed scenes independent of the engine</li>
             </ul>
           </div>
         </div>
@@ -136,7 +137,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="section">
         <h2>Affiliations</h2>
         <div class="job">
           <div class="left">
@@ -147,7 +148,7 @@
         </div>
         <div class="job">
           <div class="left">
-            <h3>Assocation for Computing Machinery</h3>
+            <h3>Association for Computing Machinery</h3>
             <p class="title">Student Chapter Board Member</p>
             <p class="time">2011 - 2014</p>
           </div>
@@ -163,7 +164,7 @@
       <div class="section">
         <h2>Technologies</h2>
         <div class="languages">
-          <p>C, Python, C++, JavaScript, Haskell, Bash, OpenGL, Git, Redis, Node.js, Make, MongoDB, JSSML</p>
+          <p>C, Python, Haskell, JavaScript, Bash, OpenGL, Git, AWS, Redis, Node.js, Make</p>
         </div>
       </div>
     </div>

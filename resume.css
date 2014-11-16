@@ -5,9 +5,10 @@
 ul, ol { padding-left:25px; margin-top:5px; }
 
 #content { width:800px; margin:0 auto; }
-#content header .contact { float:right; margin-top:-3ex; }
+#content header { margin-bottom:2ex; }
+#content header .contact { float:right; }
 
-#content .section { margin:18px 0 0; }
+#content .section { margin:1ex 0 0; }
 #content .section, #content .section .languages:last-child { margin-bottom:0; }
 
 #content .left { position:relative; }
